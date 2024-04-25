@@ -53,8 +53,8 @@
  and i_item_sk  = ws_item_sk
  group by rollup(i_category,i_class)
  order by
-   grouping(s_state)+grouping(s_county) desc,
-   case when grouping(s_state)+grouping(s_county) = 0 then i_category end,
+   grouping(i_category)+grouping(i_class) desc,
+   case when grouping(i_category)+grouping(i_class) = 0 then i_category end,
    rank_within_parent
  [_LIMITC];
 
