@@ -67,8 +67,8 @@
                  '[STATE_E]','[STATE_F]','[STATE_G]','[STATE_H]')
  group by rollup(i_category,i_class)
  order by
-   grouping(i_category) + grouping(i_class) desc
-  ,case when lochierarchy = 0 then i_category end
-  ,rank_within_parent
+    grouping(i_category) + grouping(i_class) desc,
+    case when grouping(i_category) + grouping(i_class) = 0 then i_category end,
+    rank_within_parent
   [_LIMITC];
 
