@@ -1,2 +1,2 @@
 # TPC-DS-pg_template
-TPC-DS pg_template for dsqgen
+TPC-DS template for postgres dialect, which is not supported by [dsqgen](https://github.com/gregrahn/tpcds-kit)
